@@ -46,14 +46,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Principal.Designer.cs">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutoHigienicoEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutoHigienicoEditar.Designer.cs">
+      <DependentUpon>ProdutoHigienicoEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutoHigienicoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProdutoHigienicoLista.Designer.cs">
+      <DependentUpon>ProdutoHigienicoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProdutosHigienicosCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include=".Designer.cs">
+      <DependentUpon>ProdutosHigienicosCadastro.cs</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutoHigienicoEditar.resx">
+      <DependentUpon>ProdutoHigienicoEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutoHigienicoLista.resx">
+      <DependentUpon>ProdutoHigienicoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProdutosHigienicosCadastro.resx">
+      <DependentUpon>ProdutosHigienicosCadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +106,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{d2a3ad98-30fb-4611-961e-c6f656714808}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositorio\Repositorio.csproj">
+      <Project>{74d46958-4860-4b52-8659-6f950fae111c}</Project>
+      <Name>Repositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

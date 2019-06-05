@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace view
 {
-    public partial class Form1 : Form
+    public partial class Principal : Form
     {
-        public Form1()
+        public Principal()
         {
             InitializeComponent();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            ProdutoHigienicoLista produtoHigienicoLista = new ProdutoHigienicoLista();
+            produtoHigienicoLista.ShowDialog(); 
         }
     }
 }
