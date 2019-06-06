@@ -31,15 +31,15 @@ namespace Repositorio
             {
                 DataRow linha = tabela.Rows[i];
                 Remedio remedio = new Remedio();
-                remedio.id = Convert.ToInt32(linha["id"]);
-                remedio.nome = linha["nome"].ToString();
-                remedio.e_generico = linha["e_generico"].ToString();
-                remedio.categoria = linha["categoria"].ToString();
-                remedio.e_solido = linha["e_solido"].ToString();
-                remedio.contra_indicacoes = linha["contra_indicacoes"].ToString();
-                remedio.bula = linha["bula"].ToString();
-                remedio.faixa = linha["faixa"].ToString();
-                remedio.precisa_receita = linha["precisa_receita"].ToString();
+                remedio.Id = Convert.ToInt32(linha["id"]);
+                remedio.Nome = linha["nome"].ToString();
+                remedio.Generico = Convert.ToBoolean(linha["e_generico"]);
+                remedio.Categoria = linha["categoria"].ToString();
+                remedio.Solido = Convert.ToBoolean(linha["e_solido"]);
+                remedio.ContraIndicacoes = linha["contra_indicacoes"].ToString();
+                remedio.Bula = linha["bula"].ToString();
+                remedio.Faixa = linha["faixa"].ToString();
+                remedio.PrecisaReceita = Convert.ToBoolean(linha["precisa_receita"]);
             }
             conexao.Close();
             return remedios;
@@ -66,15 +66,15 @@ namespace Repositorio
             {
                 DataRow linha = dataTable.Rows[0];
                 Remedio remedio = new Remedio();
-                remedio.id = Convert.ToInt32(linha["id"]);
-                remedio.nome = linha["nome"].ToString();
-                remedio.e_generico = linha["e_generico"].ToString();
-                remedio.categoria = linha["categoria"].ToString();
-                remedio.e_solido = linha["e_solido"].ToString();
-                remedio.contra_indicacoes = linha["contra_indicacoes"].ToString();
-                remedio.bula = linha["bula"].ToString();
-                remedio.faixa = linha["faixa"].ToString();
-                remedio.precisa_receita = linha["precisa_receita"].ToString();
+                remedio.Id = Convert.ToInt32(linha["Id"]);
+                remedio.Nome = linha["Nome"].ToString();
+                remedio.Generico = Convert.ToBoolean(linha["e_generico"]);
+                remedio.Categoria = linha["Categoria"].ToString();
+                remedio.Solido = Convert.ToBoolean(linha["e_solido"]);
+                remedio.ContraIndicacoes = linha["ContraIndicacoes"].ToString();
+                remedio.Bula = linha["bBula"].ToString();
+                remedio.Faixa = linha["Faixa"].ToString();
+                remedio.PrecisaReceita = Convert.ToBoolean(linha["precisa_receita"]);
                 return remedio;
             }
             return null;
@@ -89,17 +89,18 @@ namespace Repositorio
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"INSERT INTO remedios (id, nome, categoria, e_generico
+            comando.CommandText = @"INSERT INTO remedios (id, nome, categoria, e_generico, 
 contra_indicacoes , bula , faixa , precisa_receita)
-VALUES (@NOME , @CATEGORIA , @E_GENERICO , @CONTRA_INDICACOES , @BULA , @FAIXA , @PRECISA_RECEITA)";
+VALUES (@NOME , @CATEGORIA , @E_GENERICO , @CONTRA_INDICACOES , @BULA , @FAIXA , @PRECISA_RECEITA , @E_SOLIDO)";
 
-            comando.Parameters.AddWithValue("@NOME", remedio.nome);
-            comando.Parameters.AddWithValue("@CATEGORIA", remedio.categoria);
-            comando.Parameters.AddWithValue("@E_GENERICO", remedio.e_generico);
-            comando.Parameters.AddWithValue("@CONTRA_INDICACOES", remedio.contra_indicacoes);
-            comando.Parameters.AddWithValue("@BULA", remedio.bula);
-            comando.Parameters.AddWithValue("@FAIXA", remedio.faixa);
-            comando.Parameters.AddWithValue("@PRECISA_RECEITA", remedio.precisa_receita);
+            comando.Parameters.AddWithValue("@NOME", remedio.Nome);
+            comando.Parameters.AddWithValue("@CATEGORIA", remedio.Categoria);
+            comando.Parameters.AddWithValue("@E_GENERICO", remedio.Generico);
+            comando.Parameters.AddWithValue("@CONTRA_INDICACOES", remedio.ContraIndicacoes);
+            comando.Parameters.AddWithValue("@BULA", remedio.Bula);
+            comando.Parameters.AddWithValue("@FAIXA", remedio.Faixa);
+            comando.Parameters.AddWithValue("@PRECISA_RECEITA", remedio.PrecisaReceita);
+            comando.Parameters.AddWithValue("@E_SOLIDO", remedio.Solido);
 
             comando.ExecuteNonQuery();
             conexao.Close();
@@ -135,16 +136,18 @@ e_generico = @E_GENERICO ,
 contra_indicacoes = @CONTRA_INDICACOES , 
 bula = @BULA , 
 faixa = @FAIXA ,
-precisa_receita = @PRECISA_RECEITA 
+precisa_receita = @PRECISA_RECEITA ,
+e_solido = @E_SOLIDO 
 WHERE id = @ID";
 
-            comando.Parameters.AddWithValue("NOME", remedio.nome);
-            comando.Parameters.AddWithValue("categoria", remedio.categoria);
-            comando.Parameters.AddWithValue("e_generico", remedio.e_generico);
-            comando.Parameters.AddWithValue("contra_indicacoes", remedio.contra_indicacoes);
-            comando.Parameters.AddWithValue("bula", remedio.bula);
-            comando.Parameters.AddWithValue("faixa", remedio.faixa);
-            comando.Parameters.AddWithValue("precisa_receita", remedio.precisa_receita);
+            comando.Parameters.AddWithValue("NOME", remedio.Nome);
+            comando.Parameters.AddWithValue("categoria", remedio.Categoria);
+            comando.Parameters.AddWithValue("e_generico", remedio.Generico);
+            comando.Parameters.AddWithValue("contra_indicacoes", remedio.ContraIndicacoes);
+            comando.Parameters.AddWithValue("bula", remedio.Bula);
+            comando.Parameters.AddWithValue("faixa", remedio.Faixa);
+            comando.Parameters.AddWithValue("precisa_receita", remedio.PrecisaReceita);
+            comando.Parameters.AddWithValue("e_solido", remedio.Solido);
             comando.ExecuteNonQuery();
             conexao.Close();
         }

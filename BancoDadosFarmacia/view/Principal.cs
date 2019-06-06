@@ -20,12 +20,13 @@ namespace view
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             ProdutoHigienicoLista produtoHigienicoLista = new ProdutoHigienicoLista();
-            produtoHigienicoLista.ShowDialog(); 
+            produtoHigienicoLista.ShowDialog();
         }
 
         private void btnRemedios_Click(object sender, EventArgs e)
         {
-
+            RemedioLista remedioLista = new RemedioLista();
+            remedioLista.ShowDialog();
         }
     }
 }

@@ -8,14 +8,15 @@ namespace Model
 {
    public class Remedio
     {
-        public string e_generico;
-        public string nome;
-        public int id;
-        public string categoria;
-        public string e_solido;
-        public string contra_indicacoes;
-        public string bula;
-        public string faixa;
-        public string precisa_receita;
+        public bool Generico;
+        public string Nome;
+        public int Id;
+        public string Categoria;
+        public bool Solido;
+        public string ContraIndicacoes;
+        public string Bula;
+        public string Faixa;
+        public bool PrecisaReceita;
+        
     }
 }
