@@ -22,5 +22,10 @@ namespace view
             ProdutoHigienicoLista produtoHigienicoLista = new ProdutoHigienicoLista();
             produtoHigienicoLista.ShowDialog(); 
         }
+
+        private void btnRemedios_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
