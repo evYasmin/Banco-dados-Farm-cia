@@ -11,12 +11,12 @@ namespace Repositorio
 {
     public class RemedioRepositorio
     {
-        string cadeiaConexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\65974\Documents\ExemploBancoDados02.mdf;Integrated Security=True;Connect Timeout=30";
+        string CadeiaConexao = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\65974\Documents\ExemploBancoDados02.mdf;Integrated Security=True;Connect Timeout=30";
 
         public List<Remedio> ObterTodos()
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = cadeiaConexao;
+            conexao.ConnectionString = CadeiaConexao;
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -35,11 +35,12 @@ namespace Repositorio
                 remedio.Nome = linha["nome"].ToString();
                 remedio.Generico = Convert.ToBoolean(linha["e_generico"]);
                 remedio.Categoria = linha["categoria"].ToString();
-                remedio.Solido = Convert.ToBoolean(linha["e_solido"]);
                 remedio.ContraIndicacoes = linha["contra_indicacoes"].ToString();
                 remedio.Bula = linha["bula"].ToString();
                 remedio.Faixa = linha["faixa"].ToString();
                 remedio.PrecisaReceita = Convert.ToBoolean(linha["precisa_receita"]);
+                remedio.Solido = Convert.ToBoolean(linha["e_solido"]);
+                remedios.Add(remedio);
             }
             conexao.Close();
             return remedios;
@@ -49,7 +50,7 @@ namespace Repositorio
         public Remedio ObterPeloId(int id)
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = cadeiaConexao;
+            conexao.ConnectionString = CadeiaConexao;
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -71,8 +72,7 @@ namespace Repositorio
                 remedio.Generico = Convert.ToBoolean(linha["e_generico"]);
                 remedio.Categoria = linha["Categoria"].ToString();
                 remedio.Solido = Convert.ToBoolean(linha["e_solido"]);
-                remedio.ContraIndicacoes = linha["ContraIndicacoes"].ToString();
-                remedio.Bula = linha["bBula"].ToString();
+                remedio.Bula = linha["Bula"].ToString();
                 remedio.Faixa = linha["Faixa"].ToString();
                 remedio.PrecisaReceita = Convert.ToBoolean(linha["precisa_receita"]);
                 return remedio;
@@ -84,13 +84,12 @@ namespace Repositorio
         {
 
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = cadeiaConexao;
+            conexao.ConnectionString = CadeiaConexao;
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexao;
-            comando.CommandText = @"INSERT INTO remedios (id, nome, categoria, e_generico, 
-contra_indicacoes , bula , faixa , precisa_receita)
+            comando.CommandText = @"INSERT INTO REMEDIOS (nome, categoria, e_generico, contra_indicacoes , bula , faixa , precisa_receita, e_solido)
 VALUES (@NOME , @CATEGORIA , @E_GENERICO , @CONTRA_INDICACOES , @BULA , @FAIXA , @PRECISA_RECEITA , @E_SOLIDO)";
 
             comando.Parameters.AddWithValue("@NOME", remedio.Nome);
@@ -110,7 +109,7 @@ VALUES (@NOME , @CATEGORIA , @E_GENERICO , @CONTRA_INDICACOES , @BULA , @FAIXA ,
         public void Apagar(int id)
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = cadeiaConexao;
+            conexao.ConnectionString = CadeiaConexao;
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -124,7 +123,7 @@ VALUES (@NOME , @CATEGORIA , @E_GENERICO , @CONTRA_INDICACOES , @BULA , @FAIXA ,
         public void Atualizar(Remedio remedio)
         {
             SqlConnection conexao = new SqlConnection();
-            conexao.ConnectionString = cadeiaConexao;
+            conexao.ConnectionString = CadeiaConexao;
             conexao.Open();
 
             SqlCommand comando = new SqlCommand();
@@ -140,7 +139,7 @@ precisa_receita = @PRECISA_RECEITA ,
 e_solido = @E_SOLIDO 
 WHERE id = @ID";
 
-            comando.Parameters.AddWithValue("NOME", remedio.Nome);
+            comando.Parameters.AddWithValue("nome", remedio.Nome);
             comando.Parameters.AddWithValue("categoria", remedio.Categoria);
             comando.Parameters.AddWithValue("e_generico", remedio.Generico);
             comando.Parameters.AddWithValue("contra_indicacoes", remedio.ContraIndicacoes);
@@ -148,6 +147,7 @@ WHERE id = @ID";
             comando.Parameters.AddWithValue("faixa", remedio.Faixa);
             comando.Parameters.AddWithValue("precisa_receita", remedio.PrecisaReceita);
             comando.Parameters.AddWithValue("e_solido", remedio.Solido);
+            comando.Parameters.AddWithValue("id", remedio.Id);
             comando.ExecuteNonQuery();
             conexao.Close();
         }

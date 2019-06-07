@@ -360,6 +360,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "RemedioEditar";
             this.Text = "RemedioEditar";
+            this.Load += new System.EventHandler(this.RemedioEditar_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);

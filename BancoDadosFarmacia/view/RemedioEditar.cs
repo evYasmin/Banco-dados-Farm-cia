@@ -32,11 +32,33 @@ namespace view
             {
                 rbNaoReceita.Checked = true;
             }
+            if (remedio.Generico)
+            {
+                rbSimGenerico.Checked = true;
+            }
+            else
+            {
+                rbNaoGenerico.Checked = true;
+            }
+            if (remedio.Solido)
+            {
+                rbSimSolido.Checked = true;
+            }
+            else
+            {
+                rbNaoSolido.Checked = true;
+            }
+            rtbBula.Text = remedio.Bula;
+            rtbContraIndicacoes.Text = remedio.ContraIndicacoes;
+            cbFaixa.SelectedItem = remedio.Faixa;
+            txtCodigo.Text = remedio.Id.ToString();
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Remedio remedio = new Remedio();
+            remedio.Id = Convert.ToInt32(txtCodigo.Text);
             remedio.Nome = txtNome.Text;
             remedio.Categoria = cbCategoria.SelectedItem.ToString();
             remedio.Generico = rbSimGenerico.Checked;
@@ -47,10 +69,15 @@ namespace view
             remedio.Solido = rbSimSolido.Checked;
 
             RemedioRepositorio repositorio = new RemedioRepositorio();
-            repositorio.Inserir(remedio);
+            repositorio.Atualizar(remedio);
 
             MessageBox.Show("Editado com sucesso.");
             Close();
+        }
+
+        private void RemedioEditar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

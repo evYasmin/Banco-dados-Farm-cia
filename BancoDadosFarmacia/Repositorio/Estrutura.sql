@@ -8,7 +8,7 @@ categoria VARCHAR (30)
 
 
 
-DROP TABLE remedio;
+DROP TABLE remedios;
 CREATE TABLE remedios (
 id INT PRIMARY KEY IDENTITY(1,1) , 
 nome VARCHAR (100) , 
@@ -20,3 +20,5 @@ faixa VARCHAR(30) ,
 precisa_receita BIT , 
 e_solido BIT 
 );
+
+SELECT id,nome,categoria,e_generico,contra_indicacoes,bula,faixa,precisa_receita,e_solido FROM remedios;
