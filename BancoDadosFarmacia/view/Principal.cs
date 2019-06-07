@@ -28,5 +28,11 @@ namespace view
             RemedioLista remedioLista = new RemedioLista();
             remedioLista.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ComestivelLista comestivelLista = new ComestivelLista();
+            comestivelLista.ShowDialog();
+        }
     }
 }

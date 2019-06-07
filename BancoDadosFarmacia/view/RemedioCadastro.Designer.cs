@@ -37,8 +37,8 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblGenerico = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbSimGenerico = new System.Windows.Forms.RadioButton();
             this.rbNaoGenerico = new System.Windows.Forms.RadioButton();
+            this.rbSimGenerico = new System.Windows.Forms.RadioButton();
             this.rtbContraIndicacoes = new System.Windows.Forms.RichTextBox();
             this.lblContraIndicacoes = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -90,7 +90,7 @@
             // txtNome
             // 
             this.txtNome.Font = new System.Drawing.Font("Lucida Sans Typewriter", 14.25F);
-            this.txtNome.Location = new System.Drawing.Point(16, 92);
+            this.txtNome.Location = new System.Drawing.Point(12, 92);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(306, 30);
             this.txtNome.TabIndex = 15;
@@ -155,18 +155,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // rbSimGenerico
-            // 
-            this.rbSimGenerico.AutoSize = true;
-            this.rbSimGenerico.Font = new System.Drawing.Font("Lucida Sans Typewriter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSimGenerico.Location = new System.Drawing.Point(6, 34);
-            this.rbSimGenerico.Name = "rbSimGenerico";
-            this.rbSimGenerico.Size = new System.Drawing.Size(61, 26);
-            this.rbSimGenerico.TabIndex = 19;
-            this.rbSimGenerico.TabStop = true;
-            this.rbSimGenerico.Text = "Sim";
-            this.rbSimGenerico.UseVisualStyleBackColor = true;
-            // 
             // rbNaoGenerico
             // 
             this.rbNaoGenerico.AutoSize = true;
@@ -178,6 +166,18 @@
             this.rbNaoGenerico.TabStop = true;
             this.rbNaoGenerico.Text = "Não";
             this.rbNaoGenerico.UseVisualStyleBackColor = true;
+            // 
+            // rbSimGenerico
+            // 
+            this.rbSimGenerico.AutoSize = true;
+            this.rbSimGenerico.Font = new System.Drawing.Font("Lucida Sans Typewriter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbSimGenerico.Location = new System.Drawing.Point(6, 34);
+            this.rbSimGenerico.Name = "rbSimGenerico";
+            this.rbSimGenerico.Size = new System.Drawing.Size(61, 26);
+            this.rbSimGenerico.TabIndex = 19;
+            this.rbSimGenerico.TabStop = true;
+            this.rbSimGenerico.Text = "Sim";
+            this.rbSimGenerico.UseVisualStyleBackColor = true;
             // 
             // rtbContraIndicacoes
             // 

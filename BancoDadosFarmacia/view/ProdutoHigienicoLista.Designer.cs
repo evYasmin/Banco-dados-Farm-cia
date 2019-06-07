@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnApagar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -44,7 +44,7 @@
             this.btnApagar.Font = new System.Drawing.Font("Lucida Sans Typewriter", 14.25F);
             this.btnApagar.Location = new System.Drawing.Point(12, 23);
             this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(123, 48);
+            this.btnApagar.Size = new System.Drawing.Size(131, 48);
             this.btnApagar.TabIndex = 9;
             this.btnApagar.Text = "Apagar";
             this.btnApagar.UseVisualStyleBackColor = false;
@@ -56,7 +56,7 @@
             this.btnCadastrar.Font = new System.Drawing.Font("Lucida Sans Typewriter", 14.25F);
             this.btnCadastrar.Location = new System.Drawing.Point(12, 87);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(123, 48);
+            this.btnCadastrar.Size = new System.Drawing.Size(131, 342);
             this.btnCadastrar.TabIndex = 10;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = false;
@@ -81,10 +81,10 @@
             // 
             // ColumnId
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Lucida Sans Typewriter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ColumnId.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Sans Typewriter", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColumnId.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnId.HeaderText = "Id";
             this.ColumnId.Name = "ColumnId";
             this.ColumnId.ReadOnly = true;

@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComestivelCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComestivelCadastro.Designer.cs">
+      <DependentUpon>ComestivelCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComestivelEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComestivelEditar.Designer.cs">
+      <DependentUpon>ComestivelEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComestivelLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComestivelLista.Designer.cs">
+      <DependentUpon>ComestivelLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +114,15 @@
     <Compile Include="RemedioLista.Designer.cs">
       <DependentUpon>RemedioLista.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ComestivelCadastro.resx">
+      <DependentUpon>ComestivelCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComestivelEditar.resx">
+      <DependentUpon>ComestivelEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComestivelLista.resx">
+      <DependentUpon>ComestivelLista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>

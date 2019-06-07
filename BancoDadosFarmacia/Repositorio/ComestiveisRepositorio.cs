@@ -68,6 +68,7 @@ namespace Repositorio
                 comestivel.dataVencimento = Convert.ToDateTime(linha["data_Vencimento"]);
                 comestivel.quantidade = Convert.ToInt32(linha["quantidade"]);
                 comestivel.marca = linha["marca"].ToString();
+                return comestivel;
             }
             return null;
         }
@@ -86,7 +87,7 @@ VALUES (@NOME , @VALOR , @DATA_VENCIMENTO , @QUANTIDADE , @MARCA)";
             comando.Parameters.AddWithValue("@VALOR", comestivel.valor);
             comando.Parameters.AddWithValue("@DATA_VENCIMENTO", comestivel.dataVencimento);
             comando.Parameters.AddWithValue("@QUANTIDADE", comestivel.quantidade);
-            comando.Parameters.AddWithValue("@MARCS", comestivel.marca);
+            comando.Parameters.AddWithValue("@MARCA", comestivel.marca);
 
             comando.ExecuteNonQuery();
             conexao.Close();
