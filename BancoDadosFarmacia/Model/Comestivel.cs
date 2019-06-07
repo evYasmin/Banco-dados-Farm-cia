@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    class Comestiveis
+    public class Comestivel
     {
         public int id;
         public string nome;
